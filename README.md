@@ -52,3 +52,12 @@ The function takes as parameters the position along the x axis, the position alo
 
 More static rendering features will be introduced in the future
 
+
+# Dynamic Object Rendering Features
+
+in the process of implementation
+
+# Rendering png jpg objects
+function call syntax render(x, y, path, ctx)
+
+The function takes as parameters the position along the x axis, the position along the y axis, path and the service parameter ctx
