@@ -1,5 +1,5 @@
 # JavaScript2DGameEng
-project for developing a game engine using javaSCRIPT
+project for developing a game engine using javaSCRIPT The engine has been under development since 01/12/2024
 
 
 # basic structure of the scene rendering
