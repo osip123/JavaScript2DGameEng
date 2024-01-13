@@ -1,6 +1,7 @@
 #root{
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0;
@@ -12,5 +13,17 @@
 #canvas{
     margin: 0 auto;
     background-color: #eee;
+<<<<<<< Updated upstream
 }
 
+=======
+    margin-bottom: 130px;
+}
+
+header{
+    display: flex;
+    width: 1200px;
+    justify-content: space-between;
+    align-items: center;
+}
+>>>>>>> Stashed changes
