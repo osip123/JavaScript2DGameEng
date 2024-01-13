@@ -12,6 +12,23 @@ export function Player(){
     const ctx = canvas.getContext("2d");
 
     function drawPlayer(){
+
+
+        window.onkeydown = move = (e) => {
+            let key = e.keyCode;
+            if     (key === 68 && player.x <= canvas.width-25) {player.x += 10;} //right
+            else if(key === 65 && player.x >= 10) {player.x -= 10;} //left
+            else if(key === 83 && player.y <= canvas.height-25) {player.y += 10;} //down
+            else if(key === 87 && player.y >= 10) {player.y -= 10;} //up
+          
+            ctx.clearRect(0,0, canvas.width, canvas.height);
+            ctx.fillRect(player.x, player.y, player.w, player.h);
+          }
+
+
+
+
+
         x: Number = 100;
         y: Number = 100;
         ctx.beginPath();
