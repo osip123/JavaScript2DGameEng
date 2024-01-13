@@ -20,8 +20,6 @@ export function Player(){
         ctx.fill();
         ctx.closePath();
         console.log('player')
-        x += 20;
-        y += 20;
     }
 
     drawPlayer();

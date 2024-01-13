@@ -15,7 +15,6 @@ export function fpsMeter() {
         prevTime = time;
         frames = 0;
 
-        console.info('FPS: ', fps);
         frame.textContent = fps;
       }
 
@@ -23,6 +22,3 @@ export function fpsMeter() {
     });
   }
   
-//   fpsMeter();
-
-//   console.log(fpsMeter())
