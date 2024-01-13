@@ -13,10 +13,6 @@
 #canvas{
     margin: 0 auto;
     background-color: #eee;
-<<<<<<< Updated upstream
-}
-
-=======
     margin-bottom: 130px;
 }
 
@@ -26,4 +22,3 @@ header{
     justify-content: space-between;
     align-items: center;
 }
->>>>>>> Stashed changes
