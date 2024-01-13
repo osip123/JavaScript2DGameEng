@@ -1,5 +1,3 @@
-
-
 const player = {
     w: 50,
     h: 50,
@@ -7,38 +5,92 @@ const player = {
     health: 100,
 }
 
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+
 export function Player(){
-    const canvas = document.getElementById("canvas");
-    const ctx = canvas.getContext("2d");
+    var x = canvas.width/2;
+    var y = canvas.height-30;
+    // var t = canvas.height/2;
+    // var b = canvas.width-30;
+    var paddleHeight = 10;
+    var paddleWidth = 75;
+    var dx = 2;
+    var dy = -2;
+    var dt = 2;
+    var db = -2;
+    var paddleX = (canvas.width-paddleWidth)/2;
+    var paddleY = 100;
+    var rightPressed = false;
+    var leftPressed = false;
+    var topPressed = false;
+    var bottomPressed = false;
 
-    function drawPlayer(){
+    document.addEventListener("keydown", keyDownHandler, false);
+    document.addEventListener("keyup", keyUpHandler, false);
 
-
-        window.onkeydown = move = (e) => {
-            let key = e.keyCode;
-            if     (key === 68 && player.x <= canvas.width-25) {player.x += 10;} //right
-            else if(key === 65 && player.x >= 10) {player.x -= 10;} //left
-            else if(key === 83 && player.y <= canvas.height-25) {player.y += 10;} //down
-            else if(key === 87 && player.y >= 10) {player.y -= 10;} //up
-          
-            ctx.clearRect(0,0, canvas.width, canvas.height);
-            ctx.fillRect(player.x, player.y, player.w, player.h);
-          }
-
-
-
-
-
-        x: Number = 100;
-        y: Number = 100;
-        ctx.beginPath();
-        ctx.rect(100, 100, player.w, player.h);
-        ctx.fillStyle = '#FFF';
-        ctx.fill();
-        ctx.closePath();
-        console.log('player')
+    function keyDownHandler(e) {
+        if(e.key === "d") {
+            rightPressed = true;
+        }
+        else if(e.key === "a") {
+            leftPressed = true;
+        }
+        else if(e.key === "w"){
+            topPressed = true;
+        }
+        else if(e.key === "s"){
+            bottomPressed = true;
+        }
+    }
+    
+    function keyUpHandler(e) {
+        if(e.key === "d") {
+            rightPressed = false;
+        }
+        else if(e.key === "a") {
+            leftPressed = false;
+        }
+        // else if(e.key === "w"){
+        //     topPressed = false;
+        // }
+        // else if(e.key === "s"){
+        //     bottomPressed = false;
+        // }
     }
 
-    drawPlayer();
-    console.log('work')
+    function drawPaddle() {
+        ctx.beginPath();
+        ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
+        ctx.fillStyle = "#0095DD";
+        ctx.fill();
+        ctx.closePath()
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawPaddle();
+        
+        if(rightPressed) {
+            paddleX += 7;
+        }
+        else if(leftPressed) {
+            paddleX -= 7;
+        }
+
+        // else if(topPressed){
+        //     paddleY =+ 7;
+        // }
+
+        // else if(bottomPressed){
+        //     paddleY -= 7;
+        // }
+        
+        x += dx;
+        y += dy;
+
+    }
+    
+    setInterval(draw, 10);
 }
