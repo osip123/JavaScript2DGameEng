@@ -5,4 +5,5 @@ export function render(x, y, path, ctx){
     var img = new Image();
     img.src = path; 
     ctx.drawImage(img, x, y);
+    console.log('sucess render : ', {path})
 }
