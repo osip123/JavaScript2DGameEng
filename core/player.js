@@ -1,3 +1,6 @@
+import { config } from "../config/config.js";
+import { stopCanvas } from "../script/utiles.js";
+
 var X_pos = 0;
 var Y_pos = 0;
 var player_size = 25;
@@ -29,22 +32,38 @@ function Loop(){
 }
 
 function updatedPlayer() {
-    if(keys[37] == true){
+    if(keys[65] == true){
         X_pos = X_pos - 20;
+        if(X_pos > config.width){
+            X_pos = 400 / 2;
+            stopCanvas();
+        }
     }
-    if(keys[38] == true){
+    if(keys[87] == true){
         Y_pos = Y_pos - 20;
+        if(Y_pos > config.height){
+            Y_pos = Y_pos / 2;
+            stopCanvas();
+        }
     }
-    if(keys[39] == true){
+    if(keys[68] == true){
         X_pos = X_pos + 20;
+        if(X_pos > config.width){
+            X_pos = 400 / 2;
+            stopCanvas();
+        }
     }
-    if(keys[40] == true){
+    if(keys[83] == true){
         Y_pos = Y_pos + 20;
+        if(Y_pos > config.height){
+            Y_pos = Y_pos / 2;
+            stopCanvas();
+        }
     }
 }
 
 function renderPlayer(){
-    ctx.clearRect(0, 0, 800, 600)
+    ctx.clearRect(0, 0, 2000, 2000)
     ctx.fillRect(X_pos, Y_pos, 50, 50);
 }
 

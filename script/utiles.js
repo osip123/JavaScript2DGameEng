@@ -9,3 +9,8 @@ export function calcenterY(){
     console.log(y);
     return y;
 }
+
+export function stopCanvas(){
+    location.reload();
+    console.log('error -4523');
+}
