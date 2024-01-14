@@ -6,6 +6,12 @@ var Y_pos = 0;
 var player_size = 25;
 var keys = []; 
 
+const playerConfig = {
+    speed: 10,
+    health: 10,
+    id: 83954287,
+}
+
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -24,6 +30,7 @@ window.addEventListener("keyup", function(e) {
 function Init(){
     X_pos = 400;
     Y_pos = 200;
+    console.log(X_pos, Y_pos);
 }
 
 function Loop(){
@@ -33,28 +40,32 @@ function Loop(){
 
 function updatedPlayer() {
     if(keys[65] == true){
-        X_pos = X_pos - 20;
+        X_pos = X_pos - playerConfig.speed;
+        console.log(X_pos);
         if(X_pos > config.width){
             X_pos = 400 / 2;
             stopCanvas();
         }
     }
     if(keys[87] == true){
-        Y_pos = Y_pos - 20;
+        Y_pos = Y_pos - playerConfig.speed;
+        console.log(Y_pos);
         if(Y_pos > config.height){
             Y_pos = Y_pos / 2;
             stopCanvas();
         }
     }
     if(keys[68] == true){
-        X_pos = X_pos + 20;
+        X_pos = X_pos + playerConfig.speed;
+        console.log(X_pos);
         if(X_pos > config.width){
             X_pos = 400 / 2;
             stopCanvas();
         }
     }
     if(keys[83] == true){
-        Y_pos = Y_pos + 20;
+        Y_pos = Y_pos + playerConfig.speed;
+        console.log(Y_pos);
         if(Y_pos > config.height){
             Y_pos = Y_pos / 2;
             stopCanvas();
@@ -68,5 +79,5 @@ function renderPlayer(){
 }
 
 window.setInterval(Loop, 1000/60);
-
+console.log(playerConfig.id, playerConfig.speed)
 Init();
