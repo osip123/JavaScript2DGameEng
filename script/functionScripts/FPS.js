@@ -1,8 +1,6 @@
 
 var frame = document.getElementById("farme");
 
-// console.log(frame)
-
 export function fpsMeter() {
     let prevTime = Date.now(),
         frames = 0;
