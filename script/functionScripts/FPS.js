@@ -1,3 +1,4 @@
+import { report } from "../report/report.js";
 
 var frame = document.getElementById("farme");
 
@@ -12,7 +13,9 @@ export function fpsMeter() {
         let fps = Math.round( ( frames * 1000 ) / ( time - prevTime ) );
         prevTime = time;
         frames = 0;
-
+        if(fps < 15){
+          report();
+        }
         frame.textContent = fps;
       }
 
