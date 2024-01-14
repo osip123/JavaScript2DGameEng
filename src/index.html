@@ -7,36 +7,16 @@
     <script defer type="module" src="script.js"></script>
     <script defer type="module" src="../script/keys.js"></script>
     <script defer type="module" src="../script/utiles.js"></script>
-    <script defer type="module" src="../script/render.js"></script>
-    <script defer type="module" src="../script/player.js"></script>
+    <script defer type="module" src="../core/render.js"></script>
+    <script defer type="module" src="../core/player.js"></script>
     <script defer type="module" src="../script/functionScripts/FPS.js"></script>
     <title>VS</title>
 </head>
 <body  id="root">
-    <header>
-        <pre class="l1">
-            <span id="farme">
-                0
-            </span>
-        </pre>
-        <pre class="l2">
-            <div class="lower">
-                <span>
-                    grav
-                </span>
-                <input id="grav" type="text" placeholder="9.81">
-            </div>
-        </pre>
-    </header>
-    <div class="containner">
-        
-        <canvas 
-        id="canvas"></canvas>
-    </div>
-
-
-
-    <script defer type="module" src="../script/getcanvas.js"></script>
-    <script type="module" src="../script/tests.js"></script>
+    <canvas id="canvas"
+    width="800"
+    height="400"
+    ></canvas>
+    <script defer type="module" src="../core/getcanvas.js"></script>
 </body>
 </html>

@@ -13,12 +13,4 @@
 #canvas{
     margin: 0 auto;
     background-color: #eee;
-    margin-bottom: 130px;
-}
-
-header{
-    display: flex;
-    width: 1200px;
-    justify-content: space-between;
-    align-items: center;
 }

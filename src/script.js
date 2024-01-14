@@ -1,6 +1,5 @@
 import { fpsMeter } from "../script/functionScripts/FPS.js";
-import { mainRender } from "../script/getcanvas.js";
-import { Player } from "../script/player.js";
+import { mainRender } from "../core/getcanvas.js";
 
 const main = () => {
     mainRender();
