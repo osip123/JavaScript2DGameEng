@@ -1,11 +1,7 @@
-import { Core } from "../core/core.js";
-import { Player } from "../core/player.js";
-import { Uliles } from "../utiles/Utiles.js";
+import { CoreStart } from "../core/core.js";
 
-const core = new Core;
-const player = new Player;
-const uliles = new Uliles;
+const main = () =>{
+    CoreStart();
+}
 
-core._Init();
-player._Loop();
-uliles.calcFps();
+main();
